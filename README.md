@@ -60,3 +60,71 @@ This document outlines a comprehensive strategy for rebuilding the Miliano-eWall
 - **Post-Launch Maintenance:** Ongoing maintenance and support will be provided to address emerging issues, incorporate enhancements, and ensure the system's long-term stability and performance.
 
 By adhering to this comprehensive strategy, we are confident in delivering a robust, secure, and scalable back-end solution that empowers Miliano-eWallet to thrive in the ever-evolving digital payments landscape.
+
+Sure, here's a README file to guide users on how to run the application:
+
+---
+
+# Miliano E-Wallet Application
+
+This is a README file to guide you on how to run the Miliano E-Wallet application.
+
+## Prerequisites
+
+Before you start, make sure you have the following installed:
+
+- Docker: [Install Docker](https://docs.docker.com/get-docker/)
+- Node.js (version 20.10.0): [Install Node.js](https://nodejs.org/)
+- pnpm (package manager): [Install pnpm](https://pnpm.io/installation)
+
+## Getting Started
+
+1. Clone this repository to your local machine:
+
+   ```bash
+   git clone https://github.com/CYIMANA-Faisal/miliano-e-wallet.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd miliano-e-wallet
+   ```
+
+3. Create a `.env` file in the root directory and add the following environment variables you can take a look at the .sample.env file
+
+Make sure to replace `your-postgres-username` and `your-postgres-root-password` with your PostgreSQL credentials.
+
+4. Install project dependencies using pnpm:
+
+```bash
+pnpm install
+```
+
+## Running the Application
+
+To run the application, follow these steps:
+
+1. Start the PostgreSQL database:
+
+   ```bash
+   docker-compose up
+   ```
+
+2. Build and start the application:
+
+   ```bash
+   docker-compose
+   ```
+
+3. The application should now be running. You can access it at `http://localhost:6000`.
+
+## Stopping the Application
+
+To stop the application and remove containers, run:
+
+```bash
+docker-compose down
+```
+
+---
