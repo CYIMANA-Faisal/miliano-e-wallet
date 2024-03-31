@@ -59,23 +59,7 @@ This document outlines a comprehensive strategy for rebuilding the Miliano-eWall
 - **User Training and Support:** User training materials and support channels will be established to assist users with the transition to the new system.
 - **Post-Launch Maintenance:** Ongoing maintenance and support will be provided to address emerging issues, incorporate enhancements, and ensure the system's long-term stability and performance.
 
-By adhering to this comprehensive strategy, we are confident in delivering a robust, secure, and scalable back-end solution that empowers Miliano-eWallet to thrive in the ever-evolving digital payments landscape.
-
-Sure, here's a README file to guide users on how to run the application:
-
----
-
-# Miliano E-Wallet Application
-
-This is a README file to guide you on how to run the Miliano E-Wallet application.
-
-## Prerequisites
-
-Before you start, make sure you have the following installed:
-
-- Docker: [Install Docker](https://docs.docker.com/get-docker/)
-- Node.js (version 20.10.0): [Install Node.js](https://nodejs.org/)
-- pnpm (package manager): [Install pnpm](https://pnpm.io/installation)
+This comprehensive strategy, we are confident in delivering a robust, secure, and scalable back-end solution that empowers Miliano-eWallet to thrive in the ever-evolving digital payments landscape.
 
 ## Getting Started
 
@@ -91,11 +75,11 @@ Before you start, make sure you have the following installed:
    cd miliano-e-wallet
    ```
 
-3. Create a `.env` file in the root directory and add the following environment variables you can take a look at the .sample.env file
+3. Create a `.env` file in the root directory and add the following environment variables, using the same variables found in `.sample.env` and replacing the placeholders with your actual values Ensure to replace `your_database_host`, `your_database_port`, `your_database_name`, `your_postgres_username`, and `your_postgres_password` with your PostgreSQL database connection details. You can take reference from the `.sample.env` file.
 
-Make sure to replace `your-postgres-username` and `your-postgres-root-password` with your PostgreSQL credentials.
+## Install Dependencies
 
-4. Install project dependencies using pnpm:
+Install project dependencies using pnpm:
 
 ```bash
 pnpm install
@@ -105,26 +89,18 @@ pnpm install
 
 To run the application, follow these steps:
 
-1. Start the PostgreSQL database:
+1. Ensure your PostgreSQL database is running.
+
+2. Start the application:
 
    ```bash
-   docker-compose up
+   pnpm start
    ```
 
-2. Build and start the application:
-
-   ```bash
-   docker-compose
-   ```
-
-3. The application should now be running. You can access it at `http://localhost:6000`.
+3. The application should now be running. You can access it at `http://localhost:3000/api/v1`.
 
 ## Stopping the Application
 
-To stop the application and remove containers, run:
-
-```bash
-docker-compose down
-```
+To stop the application, press `Ctrl + C` in the terminal where the application is running.
 
 ---

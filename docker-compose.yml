@@ -8,7 +8,6 @@ services:
       context: .
       target: production
       dockerfile: ./Dockerfile
-    env_file: .env
     ports:
       - '6000:3000'
     networks:
@@ -19,14 +18,11 @@ services:
     restart: unless-stopped
     depends_on:
       - database
+
   database:
     container_name: miliano-ewallet-database
     image: postgres:12
-    env_file: ./.env
-    environment:
-      - POSTGRES_USER=$POSTGRESDB_USER
-      - POSTGRES_PASSWORD=$POSTGRESDB_ROOT_PASSWORD
-      - POSTGRES_DB=$POSTGRESDB_DATABASE
+    env_file: .env
     ports:
       - $POSTGRESDB_LOCAL_PORT:$POSTGRESDB_LOCAL_PORT
     volumes:

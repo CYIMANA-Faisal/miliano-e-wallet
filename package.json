@@ -11,7 +11,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "npm migration:run && node dist/main",
     "lint": "pnpx eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -19,7 +19,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typeorm": "npm run build && ts-node ./node_modules/typeorm/cli -d ./src/common/config/typeorm.ts",
-    "migration:run": "npm run typeorm migration:run",
+    "migration:run": "./node_modules/typeorm/cli -d ./dist/common/config/typeorm.ts migration:run",
     "migration:make": "npm run typeorm -- migration:generate ./src/migrations/$npm_config_name -p=true",
     "migration:create": "npm run typeorm -- migration:create ./src/migrations/$npm_config_name",
     "migration:revert": " npm run typeorm -- migration:revert"
